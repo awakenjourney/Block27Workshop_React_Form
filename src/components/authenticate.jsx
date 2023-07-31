@@ -9,7 +9,7 @@ const Authenticate = ({ token }) => {
     console.log("hello from authenticate token");
 
     try {
-      const response = await fetch (
+      const response = await fetch(
         "https://fsa-jwt-practice.herokuapp.com/authenticate",
         {
           method: "GET",
@@ -33,7 +33,15 @@ const Authenticate = ({ token }) => {
       {successMessage && <p>{successMessage}</p>}
       {error && <p>{error}</p>}
       {username && <p>Logged-in User: {username}</p>}
-      <button type="button" className="btn btn-primary btn-lg btn-block" onClick={handleClick} >Authenticate Token</button>
+      <div>
+        <button
+          type="button"
+          onClick={handleClick}
+          className="btn btn-outline-primary"
+        >
+          Authenticate Token
+        </button>
+      </div>
     </>
   );
 };
