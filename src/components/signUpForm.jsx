@@ -37,23 +37,35 @@ const SignUpForm = ({ setToken }) => {
       {error && <p>{error}</p>}
 
       <form onSubmit={handleSubmit}>
-        <label>
-          Username:{" "}
-          <input
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-        </label>
+        <div>
+          <label >
+            {/* Username:{" "} */}
+            <input
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              className="form-control"
+              placeholder="Username"
+            />
+          </label>
+        </div>
 
-        <label>
-          Password:{" "}
-          <input
-            value={password}
-            type="password"
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </label>
-        <button className="btn btn-primary btn-lg btn-block">Submit</button>
+        <div>
+          <label>
+            {/* Password:{" "} */}
+            <input
+              value={password}
+              type="password"
+              onChange={(e) => setPassword(e.target.value)}
+              className="form-control"
+              placeholder="Password"
+            />
+          </label>
+        </div>
+
+        <div>
+          {" "}
+          <button className="btn btn-outline-primary">Submit</button>
+        </div>
       </form>
     </>
   );
