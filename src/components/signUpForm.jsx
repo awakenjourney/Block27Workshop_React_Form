@@ -25,6 +25,8 @@ const SignUpForm = ({ setToken }) => {
       );
       const result = await response.json();
       setToken(result.token);
+      setUsername("");
+      setPassword("");
       console.log(result);
     } catch (error) {
       setError(error.message);
@@ -38,7 +40,7 @@ const SignUpForm = ({ setToken }) => {
 
       <form onSubmit={handleSubmit}>
         <div>
-          <label >
+          <label>
             {/* Username:{" "} */}
             <input
               value={username}
